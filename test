@@ -69,7 +69,7 @@ end)
 end
 
 function AutoHeathcliff()
-    local AutoHeathcliff = loadstring(game:HttpGet(('https://raw.githubusercontent.com/QCG-A/ACG/refs/heads/main/autoBoss/AutoHeathcliff.lua')))()
+    local AutoHeathcliff = loadstring(game:HttpGet("https://raw.githubusercontent.com/QCG-A/ACG/refs/heads/main/autoBoss/AutoHeathcliff.lua"))();
 end
 
 function autopickupBSTicket()
