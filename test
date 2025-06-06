@@ -72,8 +72,8 @@ function AutoHeathcliff()
 			task.spawn(function()
         while _G.AutoHeathcliff == true do
             wait(0.6)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1772.07983, 2227.46191, 1560.42493, 0.998259544, 1.67380454e-09, 0.0589740612, -7.31890659e-10, 1, -1.59932654e-08, -0.0589740612, 1.59222662e-08, 0.998259544);
             pcall(function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1772.07983, 2227.46191, 1560.42493, 0.998259544, 1.67380454e-09, 0.0589740612, -7.31890659e-10, 1, -1.59932654e-08, -0.0589740612, 1.59222662e-08, 0.998259544);
 		             for _, x in ipairs(workspace:GetChildren()) do
                 if string.find(x.Name, "ErlkingHeathcliff") then
 
