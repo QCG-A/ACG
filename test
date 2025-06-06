@@ -20,7 +20,7 @@ local GameLoader = loadstring(game:HttpGet(('https://pastebin.com/raw/k4sNWFMp')
 
 local player = game.Players.LocalPlayer
 --Version--
-getgenv().CurrentVersion = "0.01 / BETA";
+getgenv().CurrentVersion = "0.05 / BETA";
 
 --Orion Library--
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/DKDKem/Test/refs/heads/main/test1.lua')))()
