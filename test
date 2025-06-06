@@ -1,0 +1,666 @@
+--kick--
+local gameid = game.PlaceId
+
+if not (gameid == 18576660276) then
+    game.Players.LocalPlayer:Kick("This script is for ACGs only; otherwise, the script will not run. SkiBidi!")
+end
+
+-- Anti AFK --
+task.spawn(function()
+    if not getgenv().AntiAfk == true then getgenv().AntiAfk = true;
+        while true do task.wait(1100);
+            pcall(function()
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"RightBracket",false,game);
+            end)
+        end
+    end
+end)
+--Game Loader--
+local GameLoader = loadstring(game:HttpGet(('https://pastebin.com/raw/k4sNWFMp')))()
+
+local player = game.Players.LocalPlayer
+--Version--
+getgenv().CurrentVersion = "0.01 / BETA";
+
+--Orion Library--
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/DKDKem/Test/refs/heads/main/test1.lua')))()
+
+local Window = OrionLib:MakeWindow({Name = " ♦️ Library Of ACG / ACG Operation Version "..tostring(getgenv().CurrentVersion).." ♦️ ", HidePremium = false, SaveConfig = true, ConfigFolder = "LCG"})
+
+--music--
+local Miku = "http://www.roblox.com/asset/?id=8247775255"
+               local Miku1 = Instance.new("Sound");Miku1.Name = "Miku";Miku1.SoundId = Miku
+               Miku1.Volume = 10;Miku1.Looped = false;Miku1.Archivable = false;Miku1.Parent = game.Workspace;Miku1:Play();
+               
+--Values
+_G.autopickupitems = false
+_G.autopickupPresentBox = false
+_G.autopickupBSTicket = false
+_G.susanoounitalarm = false
+_G.hpall = false
+--Functions
+
+function autopickupitems()
+    while _G.autopickupitems == true do
+        wait(1.5)
+		local char = game:GetService('Players').LocalPlayer.Character
+        game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+            char = body end)
+          for i,v in pairs(workspace:GetDescendants()) do
+           if v:IsA('Tool') then
+            char.Humanoid:EquipTool(v)
+           end
+        end
+	end  
+end
+
+function autopickupPresentBox()
+    task.spawn(function()
+        while _G.autopickupPresentBox == true do
+            wait(0.6)
+            pcall(function()
+		local PresentBox = game:GetService("Workspace"):FindFirstChild("PresentBox"):FindFirstChild("Main");
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PresentBox.Position - PresentBox.CFrame.UpVector * -4,PresentBox.Position)
+       wait(0.6)
+        fireproximityprompt(workspace.PresentBox.Main.ProximityPrompt)
+        end)
+    end
+end)
+end
+
+function autoRoland()
+    task.spawn(function()
+        while _G.autoRoland == true do
+            wait(0.6)
+            pcall(function()
+		 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1772.07983, 2227.46191, 1560.42493, 0.998259544, 1.67380454e-09, 0.0589740612, -7.31890659e-10, 1, -1.59932654e-08, -0.0589740612, 1.59222662e-08, 0.998259544);
+		             for _, x in ipairs(workspace:GetChildren()) do
+                if string.find(x.Name, "ErlkingHeathcliff") then
+
+					local args = {
+	{
+		x
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = x,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+end
+end
+            for _, d in ipairs(workspace:GetChildren()) do
+                if string.find(d.Name, "CatherineBoss") then
+
+					local args = {
+	{
+		d
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = d,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+end
+end
+            for _, c in ipairs(workspace:GetChildren()) do
+                if string.find(c.Name, "ErlkingDullahan") then
+
+					local args = {
+	{
+		c
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = c,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+end
+end
+                    
+        end)
+    end
+end)
+end
+
+function autopickupBSTicket()
+    while _G.autopickupBSTicket == true do
+    wait(0.2)
+    game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("GetBSInv"):FireServer();
+end
+end
+
+function susanoounitalarm()
+    local player = game.Players.LocalPlayer
+        local playerui = player.PlayerGui
+        local susanoo = playerui.MenuGUI.SusanooIndicator
+        while _G.susanoounitalarm do
+            wait(1)
+            if susanoo.Visible == true then
+           local Alarm = "http://www.roblox.com/asset/?id=449013696"
+               local Sound = Instance.new("Sound");Sound.Name = "Alarm";Sound.SoundId = Alarm
+               Sound.Volume = 10;Sound.Looped = true;Sound.Archivable = false;Sound.Parent = game.Workspace;Sound:Play();
+                break
+            end
+        end
+    end
+
+        function hpall()
+            while _G.hpall == true do
+                wait(0.2)
+                local args = {
+                    [1] = "SelfHeal"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Kaltsit"):WaitForChild("KaltsitEvent"):FireServer(unpack(args))
+            end
+        end
+
+
+-- Noti --
+
+OrionLib:MakeNotification({
+	Name = "Welecome!",
+	Content = "This script is beta. It may contain many bugs and errors.",
+	Image = "rbxassetid://18228411269",
+	Time = 5
+})
+
+--Main Menu--
+local MainMenu = Window:MakeTab({
+	Name = "Main",
+	PremiumOnly = false
+})
+
+MainMenu:AddButton({
+	Name = "Dex Script",
+	Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/DKDKem/Test/refs/heads/main/Protected_9614732789639306.lua"))();
+  	end    
+})
+
+MainMenu:AddButton({
+	Name = "Infinie yield script",
+	Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
+  	end    
+})
+
+MainMenu:AddButton({
+	Name = "Better Roland ( Ui, Sound Destory )",
+	Callback = function()
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Background:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Roland1:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Roland2:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Roland3:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote:WaitForChild("Gone Angels"):Destroy();
+  	end    
+})
+
+MainMenu:AddButton({
+	Name = "Better Heatcliff ( Quote Destory )",
+	Callback = function()
+             game:GetService("Players").LocalPlayer.PlayerGui.ErlkingFightQuote.Background:Destroy();
+  	end    
+})
+
+MainMenu:AddButton({
+	Name = "Open Shop UI",
+	Callback = function()
+                	 game:GetService("Players").LocalPlayer.PlayerGui.ShopGUI.Enabled = true;
+
+  	end    
+    
+})
+
+MainMenu:AddButton({
+	Name = "Open Travel UI",
+	Callback = function()
+                	 game:GetService("Players").LocalPlayer.PlayerGui.TravelGUI.Enabled = true;
+
+  	end    
+    
+})
+
+MainMenu:AddButton({
+	Name = "Open Dungeon Teleport",
+	Callback = function()
+                	 game:GetService("Players").LocalPlayer.PlayerGui.TeleportGUI.Enabled = true;
+
+  	end    
+    
+})
+
+MainMenu:AddButton({
+	Name = "Open Summon Boss UI",
+	Callback = function()
+                	 game:GetService("Players").LocalPlayer.PlayerGui.SummonBossGUI.Enabled = true;
+
+  	end    
+    
+})
+
+--Farming--
+
+local Farming = Window:MakeTab({
+	Name = "Farming",
+	PremiumOnly = false
+})
+
+Farming:AddDropdown({
+	Name = "Select Mob",
+	Default = "1",
+	Options = {"OriginiumSlug", "OriginiumSlug2", "ReunionSoldier", "EliteSoldier", "Avenger", "HexedColossus", "TheGramophone", "LeithanianWhisperer"},
+	Callback = function(Value)
+		getgenv().KillMob = Value;
+	end    
+})
+
+Farming:AddButton({
+	Name = "Kill Mob",
+	Callback = function()
+        local args = {
+	{
+		workspace:WaitForChild(getgenv().KillMob)
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 6000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = getgenv().KillMob,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+end
+})
+
+Farming:AddDropdown({
+	Name = "Select Boss",
+	Default = "1",
+	Options = {"Skullshatterer", "New Nothing There", "MenosGrande", "Chatterbox", "Doro", "Hateful Avenger", "Mudrock", "Mahoraga", "The Black Silence", "RolandP3", "RolandP4", "TexasBoss", "Kali, The Red Mist", "ErlkingHeathcliff", "CatherineBoss", "ErlkingDullahan", "Qu, The Last Head of Kowloong"},
+	Callback = function(Value)
+		getgenv().KillBoss = Value;
+	end    
+})
+
+Farming:AddLabel("New Nothing There = Nothing There, RolandP3 = Roland Phase 3 and P4 is Phase 4.")
+Farming:AddLabel("TexasBoss = Texas the Omertosa, ErlkingHeathcliff, ErlkingDullahan is Heatcliff.")
+
+Farming:AddButton({
+	Name = "Kill Boss",
+	Callback = function()
+        local args = {
+	{
+		workspace:WaitForChild(getgenv().KillBoss)
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = getgenv().KillBoss,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+end
+})
+
+Farming:AddButton({
+	Name = "use 1 Recruitment Ticket",
+	Callback = function()
+                	 game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("RecruitmentBlueArchive"):InvokeServer()
+  	end    
+    
+})
+
+Farming:AddToggle({
+	Name = "Auto Roland (beta)",
+	Default = false,
+	Callback = function(Value)
+	_G.autoRoland = Value
+    autoRoland()
+end
+})
+
+Farming:AddToggle({
+	Name = "Auto Pick Up Items",
+	Default = false,
+	Callback = function(Value)
+	_G.autopickupitems = Value
+    autopickupitems()
+end
+})
+
+Farming:AddToggle({
+	Name = "Auto Pick Up PresentBox",
+	Default = false,
+	Callback = function(Value)
+       _G.autopickupPresentBox = Value
+       autopickupPresentBox()
+end
+})
+
+Farming:AddToggle({
+	Name = "Auto Pick Up BS Ticket",
+	Default = false,
+	Callback = function(Value)
+            _G.autopickupBSTicket = Value
+            autopickupBSTicket()
+end
+})
+
+Farming:AddToggle({
+	Name = "Susanoo Unit Alarm",
+	Default = false,
+	Callback = function(Value)
+            _G.susanoounitalarm = Value
+            susanoounitalarm()
+end
+})
+--Quest--
+local Quest = Window:MakeTab({
+	Name = "Quest",
+	PremiumOnly = false
+})
+
+Quest:AddButton({
+	Name = "Amiya Quest",
+	Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("BossQuest"):FireServer()
+        wait(1)
+        if game:GetService("Players").LocalPlayer.BossQuest.Completed.Value == true then
+            game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("BossQuestReward"):FireServer()
+        wait(2)
+        if game:GetService("Players").LocalPlayer.BossQuest.DoingQuest.Value == false and game:GetService("Players").LocalPlayer.BossQuest.Completed.Value == false then
+            OrionLib:MakeNotification({
+                Name = "Hey!",
+                Content = "The Amiya quest is not active, it looks like the cooldown hasn't finished. Please wait a moment and click again.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+end    
+})
+--Teleport--
+
+local Teleport = Window:MakeTab({
+	Name = "Teleport",
+	PremiumOnly = false
+})
+
+Teleport:AddButton({
+	Name = "Main Spawn",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5301.04004, 2506.36377, 4822.68701, -0.999905825, 0, 0.0137248766, 0, 1, 0, -0.0137248766, 0, -0.999905825);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "Area-59",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3274.88525, 532.123779, -16.6364212, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "TW-8",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1102.10022, 369.64447, 1565.646, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "Keter",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(828, -201.30304, 1882, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "RolandP2",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-638.888306, 117.115372, 393.375854, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "RolandP3",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-781.76355, -57.1739502, -172.344254, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "RolandP4",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1744, 4344.15479, 1650, 0, 0, 1, 0, 1, -0, -1, 0, 0);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "AronaRoom",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-27755.9785, -114.624138, 6825.88428, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "Heatcliff",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1772.07983, 2227.46191, 1560.42493, 0.998259544, 1.67380454e-09, 0.0589740612, -7.31890659e-10, 1, -1.59932654e-08, -0.0589740612, 1.59222662e-08, 0.998259544);
+  	end    
+})
+
+Teleport:AddButton({
+	Name = "Caron",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5571.7876, 2385.38403, 4721.2915, 0.207668602, 0, 0.978199184, 0, 1, 0, -0.978199184, 0, 0.207668602);
+  	end    
+})
+
+-- Misc --
+local Misc = Window:MakeTab({
+	Name = "Misc",
+	PremiumOnly = false
+})
+
+Misc:AddButton({
+	Name = "Kill all",
+	Callback = function()
+        for i,d in pairs(game.Workspace:GetDescendants()) do
+            if d.ClassName == 'Model' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+                   local args = {
+	{
+		d
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 6000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = getgenv().KillMob,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+           end
+  	end    
+	  end
+})
+
+Misc:AddButton({
+	Name = "Atomic??!?!??!",
+	Callback = function()
+              local args = {
+                [1] = "Atomic"
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Kaltsit"):WaitForChild("KaltsitEvent"):FireServer(unpack(args))
+  	end    
+})
+
+Misc:AddButton({
+	Name = "PureLove??!?!?!",
+	Callback = function()
+              local args = {
+                [1] = "PureLove"
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Kaltsit"):WaitForChild("KaltsitEvent"):FireServer(unpack(args))
+  	end    
+})
+
+Misc:AddToggle({
+	Name = "Heal Me",
+	Default = false,
+	Callback = function(Value)
+	_G.hpall = Value
+    hpall()
+end
+})
+
+OrionLib:Init()
