@@ -69,7 +69,16 @@ end)
 end
 
 function AutoHeathcliff()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/QCG-A/ACG/refs/heads/main/autoBoss/AutoHeathcliff.lua"))();
+    task.spawn(function()
+        while _G.AutoHeathcliff == true do
+            wait(0.6)
+            pcall(function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/QCG-A/ACG/refs/heads/main/autoBoss/AutoHeathcliff.lua"))();
+		end)
+    end
+end)
+
+
 end
 
 function autopickupBSTicket()
