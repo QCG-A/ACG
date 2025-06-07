@@ -368,7 +368,7 @@ local Tabs = {
 
     Tabs.MainTab:Section({ Title = "Script" })
     --
-local DexS = MainTab:Button({
+local DexS = Tabs.MainTab:Button({
     Title = "Dex Script",
     Locked = false,
     Callback = function()
@@ -376,7 +376,7 @@ local DexS = MainTab:Button({
     end
 })
 
-local InfS = MainTab:Button({
+local InfS = Tabs.MainTab:Button({
     Title = "Infinite yield Script",
     Locked = false,
     Callback = function()
@@ -386,7 +386,7 @@ local InfS = MainTab:Button({
 
 Tabs.MainTab:Section({ Title = "Better System" })
 --
-local BetterR = MainTab:Button({
+local BetterR = Tabs.MainTab:Button({
     Title = "Better Roland ( Ui, Sound Destory )",
     Locked = false,
     Callback = function()
@@ -398,7 +398,7 @@ local BetterR = MainTab:Button({
     end
 })
 
-local BetterH = MainTab:Button({
+local BetterH = Tabs.MainTab:Button({
     Title = "Better Heatcliff ( Quote Destory )",
     Locked = false,
     Callback = function()
@@ -408,7 +408,7 @@ local BetterH = MainTab:Button({
 
 Tabs.MainTab:Section({ Title = "Open UI" })
 --
-local OpenSh = MainTab:Button({
+local OpenSh = Tabs.MainTab:Button({
     Title = "Open Shop UI",
     Locked = false,
     Callback = function()
@@ -416,7 +416,7 @@ local OpenSh = MainTab:Button({
     end
 })
 
-local OpenTr = MainTab:Button({
+local OpenTr = Tabs.MainTab:Button({
     Title = "Open Travel UI",
     Locked = false,
     Callback = function()
@@ -424,7 +424,7 @@ local OpenTr = MainTab:Button({
     end
 })
 
-local OpenDu = MainTab:Button({
+local OpenDu = Tabs.MainTab:Button({
     Title = "Open Dungeon Teleport",
     Locked = false,
     Callback = function()
@@ -432,7 +432,7 @@ local OpenDu = MainTab:Button({
     end
 })
 
-local OpenSB = MainTab:Button({
+local OpenSB = Tabs.MainTab:Button({
     Title = "Open Summon Boss UI",
     Locked = false,
     Callback = function()
@@ -444,7 +444,7 @@ local OpenSB = MainTab:Button({
 
 Tabs.FarmingTab:Section({ Title = "Mob" })
 --
-local SelectMob = FarmingTab:Dropdown({
+local SelectMob = Tabs.FarmingTab:Dropdown({
     Title = "Select Mob",
     Values = { "OriginiumSlug", "OriginiumSlug2", "ReunionSoldier", "EliteSoldier", "Avenger", "HexedColossus", "TheGramophone", "LeithanianWhisperer" },
     Value = "OriginiumSlug",
@@ -454,7 +454,7 @@ local SelectMob = FarmingTab:Dropdown({
     end
 })
 
-local KillMob = FarmingTab:Button({
+local KillMob = Tabs.FarmingTab:Button({
     Title = "Kill Mob",
     Locked = false,
     Callback = function()
@@ -498,7 +498,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Regis
 
 Tabs.FarmingTab:Section({ Title = "Boss" })
 --
-local SelectBoss = FarmingTab:Dropdown({
+local SelectBoss = Tabs.FarmingTab:Dropdown({
     Title = "Select Boss",
     Desc = "If you want to know the Boss Name, read the README.md on my GitHub site.",
     Values = { "Skullshatterer", "New Nothing There", "MenosGrande", "Chatterbox", "Doro", "Hateful Avenger", "Mudrock", "Mahoraga", "The Black Silence", "RolandP3", "RolandP4", "TexasBoss", "Kali, The Red Mist", "ErlkingHeathcliff", "CatherineBoss", "ErlkingDullahan", "Qu, The Last Head of Kowloong" },
@@ -509,7 +509,7 @@ local SelectBoss = FarmingTab:Dropdown({
     end
 })
 
-local KillBoss = FarmingTab:Button({
+local KillBoss = Tabs.FarmingTab:Button({
     Title = "Kill Boss",
     Locked = false,
     Callback = function()
@@ -553,7 +553,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Regis
 
 Tabs.FarmingTab:Section({ Title = "Ticket" })
 --
-local ReTicket = FarmingTab:Button({
+local ReTicket = Tabs.FarmingTab:Button({
     Title = "Use 1 Recruitment Ticket",
     Locked = false,
     Callback = function()
@@ -563,7 +563,7 @@ local ReTicket = FarmingTab:Button({
 
 Tabs.FarmingTab:Section({ Title = "Auto" })
 --
-local PickupItem = FarmingTab:Toggle({
+local PickupItem = Tabs.FarmingTab:Toggle({
     Title = "Auto Pick Up Items",
     Desc = "Be careful not to cause lag.",
     Icon = "diamond",
@@ -575,7 +575,7 @@ local PickupItem = FarmingTab:Toggle({
     end
 })
 
-local PresentBox = FarmingTab:Toggle({
+local PresentBox = Tabs.FarmingTab:Toggle({
     Title = "Auto Pick Up Present Box",
     Desc = "Be careful not to cause lag.",
     Icon = "boxes",
@@ -587,7 +587,7 @@ local PresentBox = FarmingTab:Toggle({
     end
 })
 
-local BSTicket = FarmingTab:Toggle({
+local BSTicket = Tabs.FarmingTab:Toggle({
     Title = "Auto Pick Up BS Ticket",
     Icon = "ticket",
     Type = "Checkbox",
@@ -600,7 +600,7 @@ local BSTicket = FarmingTab:Toggle({
 
 Tabs.FarmingTab:Section({ Title = "Alarm" })
 --
-local SusanooAlarm = FarmingTab:Toggle({
+local SusanooAlarm = Tabs.FarmingTab:Toggle({
     Title = "Susanoo Unit Alarm",
     Icon = "alarm-clock-check",
     Type = "Checkbox",
@@ -615,7 +615,7 @@ local SusanooAlarm = FarmingTab:Toggle({
 
 Tabs.RaidTab:Section({ Title = "Heathcliff Raid" })
 --
-local AutojoinHeath = RaidTab:Toggle({
+local AutojoinHeath = Tabs.RaidTab:Toggle({
     Title = "Auto Join Heathcliff (beta)",
     Icon = "users",
     Type = "Checkbox",
@@ -626,7 +626,7 @@ local AutojoinHeath = RaidTab:Toggle({
     end
 })
 
-local AutoHeath = RaidTab:Toggle({
+local AutoHeath = Tabs.RaidTab:Toggle({
     Title = "Auto Heathcliff (beta)",
     Desc =  "Please turn on auto after the raid starts.",
     Icon = "swords",
@@ -642,7 +642,7 @@ local AutoHeath = RaidTab:Toggle({
 
 Tabs.QuestTab:Section({ Title = "Quest" })
 --
-local Amiya = QuestTab:Button({
+local Amiya = Tabs.QuestTab:Button({
     Title = "Amiya Quest",
     Locked = false,
     Callback = function()
@@ -670,3 +670,7 @@ Tabs.TeleportTab:Section({ Title = "Soon..." })
 
 -- Misc --
 Tabs.MiscTab:Section({ Title = "Soon..." })
+
+Window:OnClose(function()
+    print("UI closed.")
+end)
