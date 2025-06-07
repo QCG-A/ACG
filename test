@@ -1,0 +1,822 @@
+-- kick --
+local gameid = game.PlaceId
+
+if not (gameid == 18576660276) then
+    game.Players.LocalPlayer:Kick("This script is for ACGs only; otherwise, the script will not run. SkiBidi!")
+end
+
+-- Anti AFK --
+task.spawn(function()
+    if not getgenv().AntiAfk == true then getgenv().AntiAfk = true;
+        while true do task.wait(1100);
+            pcall(function()
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"RightBracket",false,game);
+            end)
+        end
+    end
+end)
+
+local player = game.Players.LocalPlayer
+-- Version --
+getgenv().CurrentVersion = "1.0 / BETA";
+
+-- WindUI Lib --
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
+-- Theme --
+WindUI:SetTheme("Dark")
+
+-- Window --
+local Window = WindUI:CreateWindow({
+    Title = "♦️ Library Of ACG ♦️",
+    Icon = "rbxassetid://12880558406",
+    Author = "ACG Operation Version "..tostring(getgenv().CurrentVersion).."",
+    Folder = "LordOfACG",
+    Size = UDim2.fromOffset(580, 460),
+    Transparent = true,
+    Theme = "Dark",
+    SideBarWidth = 200,
+    Background = "rbxassetid://12880558406", -- rbxassetid only
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = false,
+    ScrollBarEnabled = true,
+    User = {
+        Enabled = true,
+        Anonymous = true,
+        Callback = function()
+            Anonymous = false
+        end,
+    },
+    KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
+        Key = { "ACGs" },
+        Note = "Key System.",
+        Thumbnail = {
+            Image = "rbxassetid://12880558406",
+            Title = "ACG",
+        },
+        URL = "https://github.com/QCG-A/ACG",
+        SaveKey = true,
+    },
+})
+ 
+-- Edit Open Button --
+Window:EditOpenButton({
+    Title = "Mobile UI",
+    Icon = "rbxassetid://12880558406",
+    CornerRadius = UDim.new(0,16),
+    StrokeThickness = 2,
+    Color = ColorSequence.new( -- gradient
+        Color3.fromHex("FF0F7B"), 
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = true,
+    Enabled = true,
+    Draggable = true,
+})
+
+--Values
+_G.autopickupitems = false
+_G.autopickupPresentBox = false
+_G.autopickupBSTicket = false
+_G.susanoounitalarm = false
+_G.hpall = false
+--Functions
+
+function autopickupitems()
+    while _G.autopickupitems == true do
+        wait(1.5)
+		local char = game:GetService('Players').LocalPlayer.Character
+        game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+            char = body end)
+          for i,v in pairs(workspace:GetDescendants()) do
+           if v:IsA('Tool') then
+            char.Humanoid:EquipTool(v)
+           end
+        end
+	end  
+end
+
+function autopickupPresentBox()
+    task.spawn(function()
+        while _G.autopickupPresentBox == true do
+		wait(0.1)
+            pcall(function()
+		local PresentBox = game:GetService("Workspace"):FindFirstChild("PresentBox"):FindFirstChild("Main");
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(PresentBox.Position - PresentBox.CFrame.UpVector * -4,PresentBox.Position)
+
+        fireproximityprompt(workspace.PresentBox.Main.ProximityPrompt)
+        end)
+    end
+end)
+end
+
+function AutoHeathcliff()
+			task.spawn(function()
+        while _G.AutoHeathcliff == true do
+            wait(0.6)
+			-- Teleport --
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1772.07983, 2227.46191, 1560.42493, 0.998259544, 1.67380454e-09, 0.0589740612, -7.31890659e-10, 1, -1.59932654e-08, -0.0589740612, 1.59222662e-08, 0.998259544);
+            pcall(function()
+		             for _, x in ipairs(workspace:GetChildren()) do
+                if string.find(x.Name, "ErlkingHeathcliff") then -- Heathcliff Raid 1 Phase
+
+					local args = {
+	{
+		x
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = x,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+wait(0.5)
+end
+end
+            for _, d in ipairs(workspace:GetChildren()) do
+                if string.find(d.Name, "CatherineBoss") then -- Catherine. (Heathcliff Raid 2 Phase)
+
+					local args = {
+	{
+		d
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = d,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+wait(0.5)
+end
+end
+            for _, c in ipairs(workspace:GetChildren()) do
+                if string.find(c.Name, "ErlkingDullahan") then -- Heathcliff Raid 3 Phase
+
+					local args = {
+	{
+		c
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = c,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+wait(0.5)
+end
+end
+		end)
+    end
+end)
+end
+
+
+function autopickupBSTicket()
+    while _G.autopickupBSTicket == true do
+    wait(0.2)
+    game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("GetBSInv"):FireServer();
+end
+end
+
+function autojoinHe()
+local player = game.Players.LocalPlayer
+        local playerui = player.PlayerGui
+        local Heatcliff = playerui.ErlkingNotice
+		while _G.autojoinHe do
+            wait(1)
+            if Heatcliff.Enabled == true then
+           game:GetService("ReplicatedStorage"):WaitForChild("DungeonSpawn"):WaitForChild("ErlkingSpawn"):FireServer()
+        end
+		end
+    end
+
+function susanoounitalarm()
+    local player = game.Players.LocalPlayer
+        local playerui = player.PlayerGui
+        local susanoo = playerui.MenuGUI.SusanooIndicator
+        while _G.susanoounitalarm do
+            wait(1)
+            if susanoo.Visible == true then
+           local Alarm = "http://www.roblox.com/asset/?id=449013696"
+               local Sound = Instance.new("Sound");Sound.Name = "Alarm";Sound.SoundId = Alarm
+               Sound.Volume = 10;Sound.Looped = true;Sound.Archivable = false;Sound.Parent = game.Workspace;Sound:Play();
+                break
+            end
+        end
+    end
+
+        function hpall()
+            while _G.hpall == true do
+                wait(0.2)
+                local args = {
+                    [1] = "SelfHeal"
+                }
+                
+                game:GetService("ReplicatedStorage"):WaitForChild("Kaltsit"):WaitForChild("KaltsitEvent"):FireServer(unpack(args))
+            end
+        end
+
+
+
+        WindUI:Notify({
+            Title = "Hi!",
+            Content = "If you use the script on a public server, you risk getting banned, so please use it carefully on your own server.",
+            Duration = 5,
+        })
+
+-- Tob Bar --
+Window:CreateTopbarButton("gameLoad", "gamepad", function() loadstring(game:HttpGet(('https://pastebin.com/raw/k4sNWFMp')))() end,  990)
+
+-- Tab --
+local Tabs = {
+    -- Main --
+    MainTab = Window:Tab({ 
+        Title = "Main",
+        Icon = "play" 
+     }),
+
+     -- Farming --
+    FarmingTab = Window:Tab({
+        Title = "Farming",
+        Icon = "pickaxe",
+        ShowTabTitle = true
+    }),
+
+    -- Raid --
+    RaidTab = Window:Tab({ 
+        Title = "Raid", 
+        Icon = "swords", 
+        ShowTabTitle = true
+    }),
+
+    -- Quest --
+    QuestTab = Window:Tab({ 
+        Title = "notebook-pen", 
+        Icon = "paintbrush", 
+        ShowTabTitle = true
+    }),
+
+    -- Teleport --
+    TeleportTab = Window:Tab({ 
+        Title = "Teleport", 
+        Icon = "arrow-down-to-line", 
+        ShowTabTitle = true
+    }),
+
+    -- Misc --
+    MiscTab = Window:Tab({ 
+        Title = "Misc", 
+        Icon = "settings", 
+        ShowTabTitle = true
+    }),
+
+    }
+
+    Window:SelectTab(1)
+
+-- Main --
+
+    Tabs.MainTab:Section({ Title = "Script" })
+    --
+local DexS = Tabs.MainTab:Button({
+    Title = "Dex Script",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DKDKem/Test/refs/heads/main/Protected_9614732789639306.lua"))();
+    end
+})
+
+local InfS = Tabs.MainTab:Button({
+    Title = "Infinite yield Script",
+    Locked = false,
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
+    end
+})
+
+Tabs.MainTab:Section({ Title = "Better System" })
+--
+local BetterR = Tabs.MainTab:Button({
+    Title = "Better Roland ( Ui, Sound Destory )",
+    Locked = false,
+    Callback = function()
+        game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Background:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Roland1:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Roland2:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote.Roland3:Destroy();
+             game:GetService("Players").LocalPlayer.PlayerGui.RolandFightQuote:WaitForChild("Gone Angels"):Destroy();
+    end
+})
+
+local BetterH = Tabs.MainTab:Button({
+    Title = "Better Heatcliff ( Quote Destory )",
+    Locked = false,
+    Callback = function()
+        game:GetService("Players").LocalPlayer.PlayerGui.ErlkingFightQuote.Background:Destroy();
+    end
+})
+
+Tabs.MainTab:Section({ Title = "Open UI" })
+--
+local OpenSh = Tabs.MainTab:Button({
+    Title = "Open Shop UI",
+    Locked = false,
+    Callback = function()
+        game:GetService("Players").LocalPlayer.PlayerGui.ShopGUI.Enabled = true;
+    end
+})
+
+local OpenTr = Tabs.MainTab:Button({
+    Title = "Open Travel UI",
+    Locked = false,
+    Callback = function()
+         game:GetService("Players").LocalPlayer.PlayerGui.TravelGUI.Enabled = true;
+    end
+})
+
+local OpenDu = Tabs.MainTab:Button({
+    Title = "Open Dungeon Teleport",
+    Locked = false,
+    Callback = function()
+        game:GetService("Players").LocalPlayer.PlayerGui.TeleportGUI.Enabled = true;
+    end
+})
+
+local OpenSB = Tabs.MainTab:Button({
+    Title = "Open Summon Boss UI",
+    Locked = false,
+    Callback = function()
+        game:GetService("Players").LocalPlayer.PlayerGui.SummonBossGUI.Enabled = true;
+    end
+})
+
+-- Farming --
+
+Tabs.FarmingTab:Section({ Title = "Mob" })
+--
+local SelectMob = Tabs.FarmingTab:Dropdown({
+    Title = "Select Mob",
+    Values = { "OriginiumSlug", "OriginiumSlug2", "ReunionSoldier", "EliteSoldier", "Avenger", "HexedColossus", "TheGramophone", "LeithanianWhisperer" },
+    Value = "OriginiumSlug",
+    AllowNone = true,
+    Callback = function(MobValue) 
+        getgenv().KillMob = MobValue;
+    end
+})
+
+local KillMob = Tabs.FarmingTab:Button({
+    Title = "Kill Mob",
+    Locked = false,
+    Callback = function()
+        local args = {
+	{
+		workspace:WaitForChild(getgenv().KillMob)
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 6000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = getgenv().KillMob,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+    end
+})
+
+Tabs.FarmingTab:Section({ Title = "Boss" })
+--
+local SelectBoss = Tabs.FarmingTab:Dropdown({
+    Title = "Select Boss",
+    Desc = "If you want to know the Boss Name, read the README.md on my GitHub site.",
+    Values = { "Skullshatterer", "New Nothing There", "MenosGrande", "Chatterbox", "Doro", "Hateful Avenger", "Mudrock", "Mahoraga", "The Black Silence", "RolandP3", "RolandP4", "TexasBoss", "Kali, The Red Mist", "ErlkingHeathcliff", "CatherineBoss", "ErlkingDullahan", "Qu, The Last Head of Kowloong" },
+    Value = "Skullshatterer",
+    AllowNone = true,
+    Callback = function(BossValue) 
+        getgenv().KillBoss = BossValue;
+    end
+})
+
+local KillBoss = Tabs.FarmingTab:Button({
+    Title = "Kill Boss",
+    Locked = false,
+    Callback = function()
+        local args = {
+	{
+		workspace:WaitForChild(getgenv().KillBoss)
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 15000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = getgenv().KillBoss,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+    end
+})
+
+Tabs.FarmingTab:Section({ Title = "Ticket" })
+--
+local ReTicket = Tabs.FarmingTab:Button({
+    Title = "Use 1 Recruitment Ticket",
+    Locked = false,
+    Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("RecruitmentBlueArchive"):InvokeServer()
+    end
+})
+
+Tabs.FarmingTab:Section({ Title = "Auto" })
+--
+local PickupItem = Tabs.FarmingTab:Toggle({
+    Title = "Auto Pick Up Items",
+    Desc = "Be careful not to cause lag.",
+    Icon = "diamond",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(Value) 
+        _G.autopickupitems = Value
+        autopickupitems()
+    end
+})
+
+local PresentBox = Tabs.FarmingTab:Toggle({
+    Title = "Auto Pick Up Present Box",
+    Desc = "Be careful not to cause lag.",
+    Icon = "boxes",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(Value) 
+        _G.autopickupPresentBox = Value
+       autopickupPresentBox()
+    end
+})
+
+local BSTicket = Tabs.FarmingTab:Toggle({
+    Title = "Auto Pick Up BS Ticket",
+    Icon = "ticket",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(Value) 
+        _G.autopickupBSTicket = Value
+            autopickupBSTicket()
+    end
+})
+
+Tabs.FarmingTab:Section({ Title = "Alarm" })
+--
+local SusanooAlarm = Tabs.FarmingTab:Toggle({
+    Title = "Susanoo Unit Alarm",
+    Icon = "alarm-clock-check",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(Value) 
+       _G.susanoounitalarm = Value
+            susanoounitalarm()
+    end
+})
+
+-- Raid --
+
+Tabs.RaidTab:Section({ Title = "Heathcliff Raid" })
+--
+local AutojoinHeath = Tabs.RaidTab:Toggle({
+    Title = "Auto Join Heathcliff (beta)",
+    Icon = "users",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(Value) 
+      _G.autojoinHe = Value
+      autojoinHe()
+    end
+})
+
+local AutoHeath = Tabs.RaidTab:Toggle({
+    Title = "Auto Heathcliff (beta)",
+    Desc =  "Please turn on auto after the raid starts.",
+    Icon = "swords",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(Value) 
+      _G.AutoHeathcliff = Value
+      AutoHeathcliff()
+    end
+})
+
+-- Quest --
+
+Tabs.QuestTab:Section({ Title = "Quest" })
+--
+local Amiya = Tabs.QuestTab:Button({
+    Title = "Amiya Quest",
+    Locked = false,
+    Callback = function()
+        game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("BossQuest"):FireServer()
+        wait(1)
+
+        if game:GetService("Players").LocalPlayer.BossQuest.Completed.Value == true then
+            game:GetService("ReplicatedStorage"):WaitForChild("CheckEvents"):WaitForChild("BossQuestReward"):FireServer()
+        wait(2)
+
+        if game:GetService("Players").LocalPlayer.BossQuest.Cooldown.Value == 60 then
+        wait(0.5)
+         WindUI:Notify({
+            Title = "Hey!",
+            Content = "The Amiya quest is not active, it looks like the cooldown hasn't finished. Please wait a moment and click again.",
+            Icon = "check",
+            Duration = 5,
+        })
+        end
+        end
+    end
+})
+
+-- Teleport --
+Tabs.TeleportTab:Section({ Title = "Teleport" })
+--
+local MainSpawn = Tabs.TeleportTab:Button({
+    Title = "Main Spawn",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5301.04004, 2506.36377, 4822.68701, -0.999905825, 0, 0.0137248766, 0, 1, 0, -0.0137248766, 0, -0.999905825);
+    end
+})
+
+local Area59 = Tabs.TeleportTab:Button({
+    Title = "Area-59",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3274.88525, 532.123779, -16.6364212, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    end
+})
+
+local TW8 = Tabs.TeleportTab:Button({
+    Title = "TW-8",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1102.10022, 369.64447, 1565.646, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    end
+})
+
+local Keter = Tabs.TeleportTab:Button({
+    Title = "Keter",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(828, -201.30304, 1882, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    end
+})
+
+local RolandP2 = Tabs.TeleportTab:Button({
+    Title = "Roland Phase 2",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-638.888306, 117.115372, 393.375854, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    end
+})
+
+local RolandPhase3 = Tabs.TeleportTab:Button({
+    Title = "Roland Phase 3",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-781.76355, -57.1739502, -172.344254, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    end
+})
+
+local RolandPhase4 = Tabs.TeleportTab:Button({
+    Title = "Roland Phase 4",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1744, 4344.15479, 1650, 0, 0, 1, 0, 1, -0, -1, 0, 0);
+    end
+})
+
+local AronaRoom = Tabs.TeleportTab:Button({
+    Title = "Arona Room",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-27755.9785, -114.624138, 6825.88428, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    end
+})
+
+local HeatcliffMap = Tabs.TeleportTab:Button({
+    Title = "Heatcliff Raid",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1772.07983, 2227.46191, 1560.42493, 0.998259544, 1.67380454e-09, 0.0589740612, -7.31890659e-10, 1, -1.59932654e-08, -0.0589740612, 1.59222662e-08, 0.998259544);
+    end
+})
+
+Tabs.TeleportTab:Section({ Title = "NPC" })
+
+local Charon = Tabs.TeleportTab:Button({
+    Title = "Charon NPC",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5571.7876, 2385.38403, 4721.2915, 0.207668602, 0, 0.978199184, 0, 1, 0, -0.978199184, 0, 0.207668602);
+    end
+})
+
+local Angelica = Tabs.TeleportTab:Button({
+    Title = "Angelica NPC",
+    Locked = false,
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5463.01611, 2437.88257, 4670.13037, 0.0479977578, -8.74126584e-08, 0.998847425, 2.39058284e-08, 1, 8.63647713e-08, -0.998847425, 1.97329602e-08, 0.0479977578);
+    end
+})
+
+-- Misc --
+Tabs.MiscTab:Section({ Title = "Soon..." })
+
+local Killall = Tabs.MiscTab:Button({
+    Title = "Kill All",
+    Locked = false,
+    Callback = function()
+        for i,d in pairs(game.Workspace:GetDescendants()) do
+            if d.ClassName == 'Model' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
+                   local args = {
+	{
+		d
+	},
+	{
+		Attributes = {
+			Ragdoll = false,
+			Daze = false,
+			ShowVisual = false,
+			Effects = {
+				Visual = {
+					["Common/hit_punch_1"] = {}
+				}
+			},
+			IgnoreBlock = false,
+			IgnoreIframe = false,
+			MultipleNpcDmg = 1,
+			Stun = 1,
+			Guardbreak = false,
+			Knockback = {
+				Duration = 0.3,
+				Direction = vector.create(-0.11328146606683731, -6.295117316312826e-08, 0.9935629367828369)
+			},
+			Damage = 6000
+		},
+		Properties = {
+			DebounceDuration = 0.3,
+			PartOffset = CFrame.new(0, 0, -3, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			Duration = 0.25,
+			ReferencePart = getgenv().KillMob,
+			Size = 3
+		}
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RegisterHit"):FireServer(unpack(args))
+           end
+  	end    
+    end
+})
+
+local PureLove = Tabs.MiscTab:Button({
+    Title = "Pure Love Beam",
+    Locked = false,
+    Callback = function()
+       local args = {
+                [1] = "PureLove"
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Kaltsit"):WaitForChild("KaltsitEvent"):FireServer(unpack(args))
+    end
+})
+
+local Atomic = Tabs.MiscTab:Button({
+    Title = "I AM Atomic",
+    Locked = false,
+    Callback = function()
+        local args = {
+                [1] = "Atomic"
+            }
+            
+            game:GetService("ReplicatedStorage"):WaitForChild("Kaltsit"):WaitForChild("KaltsitEvent"):FireServer(unpack(args))
+    end
+})
+
+Window:OnClose(function()
+    print("UI closed.")
+end)
