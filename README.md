@@ -12,3 +12,5 @@ ErlkingHeathcliff = Heathcliff Raid 1 Phase.
 CatherineBoss = Heathcliff Raid 2 Phase.
 <br>
 ErlkingDullahan = Heathcliff Raid 3 Phase.
+
+Key is ACGs
