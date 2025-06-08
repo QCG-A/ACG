@@ -85,7 +85,7 @@ wait(2)
 setText("It's Pure Love.")
 
 task.spawn(function()
-	fadeOut(nameLabel, 2) -- 2ÃÊ µ¿¾È »ç¶óÁö°Ô
+	fadeOut(nameLabel, 2) -- 2ÃƒÃŠ ÂµÂ¿Â¾Ãˆ Â»Ã§Â¶Ã³ÃÃ¶Â°Ã”
 end)
 
 task.spawn(function()
